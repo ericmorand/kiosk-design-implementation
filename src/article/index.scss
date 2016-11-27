@@ -1,0 +1,56 @@
+@import "../theme/grid/index";
+@import "../theme/prettyprint/index";
+@import "../theme/index";
+
+article {
+  background-color: $theme--color--background-color--light;
+  color: $theme--color--text-color--on-light;
+
+  > .image-wrapper {
+    width: 100%;
+    height: 30.0em;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  > .content-wrapper {
+    @include grid-large();
+    margin: auto;
+
+    @include breakpoint($theme--breakpoint--md) {
+      @include grid-big();
+    }
+
+    @include breakpoint($theme--breakpoint--lg) {
+      @include grid-medium();
+    }
+  }
+
+  .header {
+    margin-top: 1.5em;
+    text-align: center;
+
+    h1, .caption {
+      text-align: center;
+    }
+
+    .caption {
+      &.author {
+        display: inline-block;
+        border-top: solid 2px #ccc;
+        padding-top: 0.5em;
+        margin-top: 1.0em;
+      }
+
+      &.date {
+        color: #aeaeae;
+      }
+    }
+
+    h1 {
+    }
+  }
+}

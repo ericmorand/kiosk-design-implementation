@@ -1,0 +1,35 @@
+// all sizes in pt
+$theme--ref--breakpoint--sm: 0;
+$theme--ref--breakpoint--md: 480;
+$theme--ref--breakpoint--lg: 1024;
+
+$theme--ref--breakpoints: (
+        $theme--ref--breakpoint--sm,
+        $theme--ref--breakpoint--md,
+        $theme--ref--breakpoint--lg
+);
+
+$theme--ref--font-sizes: (
+        $theme--ref--breakpoint--sm: 14, //<dimen name="abc_text_size_body_1_material">14sp</dimen>
+        $theme--ref--breakpoint--md: 16,
+        $theme--ref--breakpoint--lg: 18
+);
+
+$theme--ref--font-size--h1: 20; //<dimen name="abc_text_size_title_material">20sp</dimen>
+$theme--ref--font-size--h2: 16; //<dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
+$theme--ref--font-size--h3: 12; //<dimen name="abc_text_size_caption_material">12sp</dimen>
+
+
+//<dimen name="abc_text_size_body_2_material">14sp</dimen>
+//<dimen name="abc_text_size_button_material">14sp</dimen>
+//<dimen name="abc_text_size_display_1_material">34sp</dimen>
+//<dimen name="abc_text_size_display_2_material">45sp</dimen>
+//<dimen name="abc_text_size_display_3_material">56sp</dimen>
+//<dimen name="abc_text_size_display_4_material">112sp</dimen>
+//<dimen name="abc_text_size_headline_material">24sp</dimen>
+//<dimen name="abc_text_size_large_material">22sp</dimen>
+//<dimen name="abc_text_size_medium_material">18sp</dimen>
+//<dimen name="abc_text_size_menu_material">16sp</dimen>
+//<dimen name="abc_text_size_small_material">14sp</dimen>
+//<dimen name="abc_text_size_subhead_material">16sp</dimen>
+//<dimen name="abc_text_size_title_material_toolbar">20dp</dimen>

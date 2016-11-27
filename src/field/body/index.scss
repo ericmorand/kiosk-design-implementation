@@ -1,0 +1,35 @@
+@import "../../theme/index";
+@import "../../theme/prettyprint/index";
+
+.field-body {
+  > section {
+    margin-top: 1.5em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  pre {
+    margin: 0;
+    padding: 0;
+
+    code {
+      @include breakpoint($theme--breakpoint--md) {
+        //margin: 1.0em;
+      }
+
+      @include breakpoint($theme--breakpoint--lg) {
+        //margin: 1.5em;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../index";
+
+.prettyprint {
+  @import "../../../node_modules/highlight.js/styles/github-gist.css";
+
+  direction: ltr;
+  display: block;
+  background-color: #fafafa; // todo: use theme color
+  border: solid 1px #ccc; // todo: use theme color
+  padding: 1.0em;
+
+  white-space: pre-wrap;
+  word-break: normal;
+}

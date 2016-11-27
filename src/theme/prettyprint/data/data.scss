@@ -1,0 +1,9 @@
+@import "ipsum/mixins";
+
+.lorem {
+  @include ipsum();
+}
+
+@mixin dolor-sit-amet() {
+  content: "dolor sit amet";
+}

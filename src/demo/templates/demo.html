@@ -1,0 +1,18 @@
+<div class="demo" v-bind:class="{'fullscreen': fullscreen}" cloak>
+    <div class="demo-header">
+        <h1 class="demo-h1">{{ title }}</h1>
+        <div class="demo-toolbar">
+        <language-selector v-bind:language="language" v-bind:languages="languages"></language-selector>
+        <button class="demo-fullscreen" v-on:click="onFullScreenButtonClick">Full screen</button>
+        </div>
+    </div>
+    <div v-bind:lang="language.code" v-bind:dir="language.direction">
+        <div class="demo-body">
+            <section v-for="aLanguage in languages" v-show="aLanguage.code == language.code" class="content">
+                <slot v-bind:name="'content-' + aLanguage.code">
+                    This will only be displayed if there is no content to be distributed.
+                </slot>
+            </section>
+        </div>
+    </div>
+</div>

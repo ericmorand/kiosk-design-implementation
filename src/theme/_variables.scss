@@ -1,0 +1,10 @@
+@import "ref";
+
+$theme--ref--font-size: map-get($theme--ref--font-sizes, $theme--ref--breakpoint--sm);
+
+$theme--font-size--h1: ($theme--ref--font-size--h1 / $theme--ref--font-size) * 1em;
+$theme--font-size--h2: ($theme--ref--font-size--h2 / $theme--ref--font-size) * 1em;
+$theme--font-size--h3: ($theme--ref--font-size--h3 / $theme--ref--font-size) * 1em;
+
+$theme--breakpoint--md: $theme--ref--breakpoint--md * 1px;
+$theme--breakpoint--lg: $theme--ref--breakpoint--lg * 1px;

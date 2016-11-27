@@ -1,0 +1,16 @@
+@import "color/index";
+@import "font/index";
+@import "typography/index";
+@import "mixins";
+
+body {
+  @include primary-font();
+  @include font-size($theme--ref--font-sizes);
+
+  margin: 0;
+  padding: 0;
+}
+
+[v-cloak] {
+  display: none;
+}

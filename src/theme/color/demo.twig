@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Color demo</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="app">
+    <demo title="Color" class="demo-theme-color" v-bind:languages="{{ languages|json_encode|escape }}">
+        {% for language in languages %}
+            <div slot="content-{{ language.code }}">
+                <div class="demo-content">
+                    <h2 class="demo-h2">Text colors</h2>
+                    {% for textColor in textColors %}
+                        <section>
+                            <h3 class="demo-h3">{{ textColor.title }}</h3>
+                            <span class="{{ textColor.class }}">{{ language.lorem.long }}</span>
+                        </section>
+                    {% endfor %}
+                </div>
+                <div class="demo-content">
+                    <h2 class="demo-h2">Background colors</h2>
+                    {% for backgroundColor in backgroundColors %}
+                        <section>
+                            <h3 class="demo-h3">{{ backgroundColor.title }}</h3>
+                            <div class="{{ backgroundColor.class }}"></div>
+                        </section>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </demo>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

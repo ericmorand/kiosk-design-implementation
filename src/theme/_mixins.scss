@@ -1,0 +1,161 @@
+@import "ref";
+@import "functions";
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+@mixin font-size($sizes) {
+  @each $bp, $font-size in $sizes {
+    @if ($bp == $theme--ref--breakpoint--sm) {
+      font-size: $font-size * 1px;
+    } @else {
+      @include breakpoint($bp * 1px) {
+        font-size: $font-size * 1px;
+      }
+    }
+  }
+}
+
+@mixin ref-sizes-to-em($ref-sizes, $size-property) {
+  @if (type-of($ref-sizes) != 'map') {
+    $ref-size: $ref-sizes;
+    $ref-sizes: ();
+
+    @each $bp in $theme--ref--breakpoints {
+      $ref-sizes: map-merge($ref-sizes, ($bp: $ref-size));
+    }
+  }
+
+  @each $bp, $ref-size in $ref-sizes {
+    $size: ref-size-to-em($ref-size, $bp);
+
+    @if ($bp == $theme--ref--breakpoint--sm) {
+      #{$size-property}: $size;
+    } @else {
+      @include breakpoint($bp * 1px) {
+        #{$size-property}: $size;
+      }
+    }
+  }
+}
+
+@mixin ref-font-sizes-to-em($ref-font-sizes) {
+  @include ref-sizes-to-em($ref-font-sizes, 'font-size');
+}
+
+@mixin clear-float() {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+// rtl support
+@mixin border-left($value) {
+  [dir="ltr"] & {
+    border-left: $value;
+  }
+
+  [dir="rtl"] & {
+    border-right: $value;
+  }
+}
+
+@mixin border-right($value) {
+  [dir="ltr"] & {
+    border-right: $value;
+  }
+
+  [dir="rtl"] & {
+    border-left: $value;
+  }
+}
+
+@mixin margin-left($value) {
+  [dir="ltr"] & {
+    margin-left: $value;
+  }
+
+  [dir="rtl"] & {
+    margin-right: $value;
+  }
+}
+
+@mixin margin-right($value) {
+  [dir="ltr"] & {
+    margin-right: $value;
+  }
+
+  [dir="rtl"] & {
+    margin-left: $value;
+  }
+}
+
+@mixin padding-left($value) {
+  [dir="ltr"] & {
+    padding-left: $value;
+  }
+
+  [dir="rtl"] & {
+    padding-right: $value;
+  }
+}
+
+@mixin padding-right($value) {
+  [dir="ltr"] & {
+    padding-right: $value;
+  }
+
+  [dir="rtl"] & {
+    padding-left: $value;
+  }
+}
+
+@mixin left($value) {
+  [dir="ltr"] & {
+    left: $value;
+  }
+
+  [dir="rtl"] & {
+    right: $value;
+  }
+}
+
+@mixin right($value) {
+  [dir="ltr"] & {
+    right: $value;
+  }
+
+  [dir="rtl"] & {
+    left: $value;
+  }
+}
+
+@mixin text-align($value, $important: null) {
+  [dir="ltr"] & {
+    text-align: $value $important;
+  }
+
+  [dir="rtl"] & {
+    @if ($value == left) {
+      text-align: right $important;
+    } @else if ($value == right) {
+      text-align: left $important;
+    } @else {
+      text-align: $value $important;
+    }
+  }
+}
+
+@mixin float($value, $important: null) {
+  [dir="ltr"] & {
+    float: $value $important;
+  }
+
+  [dir="rtl"] & {
+    @if ($value == left) {
+      float: right $important;
+    } @else if ($value == right) {
+      float: left $important;
+    } @else {
+      float: $value $important;
+    }
+  }
+}

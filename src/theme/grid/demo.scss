@@ -1,0 +1,47 @@
+@import "index";
+@import "../../demo/index";
+
+.demo-theme-grid {
+  .element {
+    text-align: center;
+    height: 50px;
+    position: relative;
+
+    span {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  .tiny {
+    @include grid-tiny();
+    background-color: tomato;
+  }
+
+  .small {
+    @include grid-small();
+    background-color: green;
+  }
+
+  .medium {
+    @include grid-medium();
+    background-color: yellow;
+  }
+
+  .big {
+    @include grid-big();
+    background-color: cadetblue;
+  }
+
+  .large {
+    @include grid-large();
+    background-color: magenta;
+  }
+
+  .full {
+    @include grid-full();
+    background-color: darkgray;
+  }
+}

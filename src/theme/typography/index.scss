@@ -1,0 +1,49 @@
+@import "../mixins";
+@import "../font/mixins";
+@import "../variables";
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: $theme--font-size--h1;
+}
+
+h2 {
+  font-size: $theme--font-size--h2;
+}
+
+h3 {
+  font-size: $theme--font-size--h3;
+}
+
+.caption {
+  font-size: $theme--font-size--h3;
+  font-weight: 700;
+}
+
+$line-height: 2.50em;
+
+blockquote {
+  @include handwritten-font(italic);
+  margin: 0;
+  font-size: 1.25em;
+  color: #aeaeae;
+  line-height: 1.0em;
+
+  &:before, &:after {
+    font-size: 1.50em;
+  }
+
+  &:before {
+    content: "\201C";
+    @include padding-right(0.10em)
+  }
+
+  &:after {
+    content: "\201E";
+    @include padding-left(0.10em)
+  }
+}

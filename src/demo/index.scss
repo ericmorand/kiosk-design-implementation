@@ -1,0 +1,52 @@
+@import "body";
+
+[v-cloak] {
+  display: none;
+}
+
+.demo {
+  padding: 16px;
+
+  .demo-h1, .demo-h2, .demo-h3 {
+    margin: 0;
+  }
+
+  .demo-h1 {
+    font-size: 48px;
+  }
+
+  .demo-h2 {
+    border: none;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  > .demo-header {
+    border: none;
+    margin-bottom: 20px;
+    border-bottom: solid 5px #eee;
+
+    .demo-h1 {
+      float: left;
+    }
+
+    .demo-toolbar {
+      float: right;
+    }
+
+    &:after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+
+  &.fullscreen {
+    padding: 0;
+
+    > .demo-header {
+      display: none;
+    }
+  }
+}

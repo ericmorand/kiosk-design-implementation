@@ -1,0 +1,30 @@
+$grid: 6;
+
+@mixin grid() {
+  display: inline-block;
+}
+
+@mixin grid-full() {
+  width: percentage(6/6);
+}
+
+@mixin grid-large() {
+  width: percentage(5/6);
+}
+
+@mixin grid-big() {
+  width: percentage(4/6);
+}
+
+@mixin grid-medium() {
+  width: percentage(3/6);
+}
+
+@mixin grid-small() {
+  width: percentage(2/6);
+}
+
+@mixin grid-tiny() {
+  width: percentage(1/6);
+}
+

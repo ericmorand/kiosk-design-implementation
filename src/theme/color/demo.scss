@@ -1,0 +1,31 @@
+@import "../../demo/index";
+@import "../index.scss";
+
+.demo-theme-color {
+  .text-color-on-light, .text-color-on-dark {
+    padding: 8px;
+    display: inline-block;
+  }
+
+  .text-color-on-light {
+    color: $theme--color--text-color--on-light;
+    background-color: $theme--color--background-color--light;
+  }
+
+  .text-color-on-dark {
+    color: $theme--color--text-color--on-dark;
+    background-color: $theme--color--background-color--dark;
+  }
+
+  .background-color-dark, .background-color-light {
+      height: 128px;
+  }
+
+  .background-color-dark {
+    background-color: $theme--color--background-color--dark;
+  }
+
+  .background-color-light {
+    background-color: $theme--color--background-color--light;
+  }
+}

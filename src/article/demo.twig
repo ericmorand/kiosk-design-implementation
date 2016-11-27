@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>article demo</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="app">
+    <demo title="article demo" v-bind:languages="{{ languages|json_encode|escape }}">
+        {% for language in languages %}
+            <div slot="content-{{ language.code }}">
+                {% set languageArticle = article[language.code] %}
+
+                {% include "index.twig" with {
+                title: languageArticle.title,
+                author: languageArticle.author,
+                date: languageArticle.date,
+                image: languageArticle.image,
+                sections: languageArticle.sections
+                } %}
+            </div>
+        {% endfor %}
+    </demo>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

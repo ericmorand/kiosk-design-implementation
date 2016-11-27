@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Icon demo</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="app">
+    <demo title="Icon" v-bind:languages="{{ languages|json_encode|escape }}">
+        {% for language in languages %}
+            <div slot="content-{{ language.code }}" class="demo-theme-icon">
+                <div class="demo-content">
+                    {% for icon in icons %}
+                        <div class="icon-wrapper" title="{{ icon.name }}">
+                            <span class="icon">{{ icon.name }}</span>
+                            <span class="caption">{{ icon.title }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </demo>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

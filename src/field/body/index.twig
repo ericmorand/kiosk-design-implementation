@@ -1,0 +1,12 @@
+<kiosk-field-body inline-template>
+    <div slot="content">
+        <div class="field-body">
+            {% for section in sections %}
+                <section>
+                    <h2>{{ section.title }}</h2>
+                    <div>{{ section.content }}</div>
+                </section>
+            {% endfor %}
+        </div>
+    </div>
+</kiosk-field-body>

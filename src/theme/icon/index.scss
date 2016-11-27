@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'IconFont';
+  src: url("../../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf") format("truetype");
+}
+
+@mixin icon-font() {
+  font-family: 'IconFont', serif;
+}
+
+.icon {
+  @include icon-font();
+}

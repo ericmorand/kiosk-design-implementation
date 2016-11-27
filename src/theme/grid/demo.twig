@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>grid demo</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="app">
+  <demo title="grid demo" v-bind:languages="{{ languages|json_encode|escape }}">
+    {% for language in languages %}
+      <div slot="content-{{ language.code }}" class="demo-content demo-theme-grid">
+          {% for element in elements %}
+              <div class="element {{ element.class }}"><span>{{ element.class }}</span></div>
+          {% endfor %}
+      </div>
+    {% endfor %}
+  </demo>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

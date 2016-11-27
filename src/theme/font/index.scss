@@ -1,0 +1,102 @@
+// latin
+$fontWeights: (
+        100: "Thin",
+        400: "Regular",
+        700: "Medium"
+);
+
+@each $fontWeight, $fontName in $fontWeights {
+  $fontStyles: (
+          normal: "",
+          italic: "Italic"
+  );
+
+  @each $fontStyle, $fontStyleName in $fontStyles {
+    $fontFileName: #{$fontName}#{$fontStyleName};
+
+    @if (($fontName == "Regular") and ($fontStyle == "italic")) {
+      $fontFileName: "Italic";
+    }
+
+    @font-face {
+      font-family: 'Primary';
+      font-style: $fontStyle;
+      font-weight: $fontWeight;
+      src: url("assets/Roboto/Roboto-#{$fontFileName}.ttf") format("truetype");
+    }
+  }
+}
+
+// arabic
+$fontWeights: (
+        100: "Light",
+        400: "Regular",
+        700: "SemiBold"
+);
+
+@each $fontWeight, $fontName in $fontWeights {
+  $fontStyles: (
+          normal
+  );
+
+  @each $fontStyle in $fontStyles {
+    $fontFileName: #{$fontName};
+
+    @font-face {
+      font-family: 'PrimaryArabic';
+      font-style: $fontStyle;
+      font-weight: $fontWeight;
+      src: url("assets/Cairo/Cairo-#{$fontFileName}.ttf") format("truetype");
+    }
+  }
+}
+
+/***************/
+/* handwritten */
+/***************/
+
+// latin
+$fontWeights: (
+        100: "Regular",
+        400: "Regular",
+        700: "Bold"
+);
+
+@each $fontWeight, $fontName in $fontWeights {
+  $fontStyles: (
+          normal
+  );
+
+  @each $fontStyle in $fontStyles {
+    $fontFileName: #{$fontName};
+
+    @font-face {
+      font-family: 'Handwritten';
+      font-style: $fontStyle;
+      font-weight: $fontWeight;
+      src: url("assets/Tangerine/Tangerine_#{$fontFileName}.ttf") format("truetype");
+    }
+  }
+}
+
+// arabic
+$fontWeights: (
+        100: "",
+        400: "",
+        700: ""
+);
+
+@each $fontWeight, $fontName in $fontWeights {
+  $fontStyles: (
+          normal
+  );
+
+  @each $fontStyle in $fontStyles {
+    @font-face {
+      font-family: 'HandwrittenArabic';
+      font-style: $fontStyle;
+      font-weight: $fontWeight;
+      src: url("assets/Lateef/LateefRegOT.ttf") format("truetype");
+    }
+  }
+}

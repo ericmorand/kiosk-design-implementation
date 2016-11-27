@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prettyprint demo</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="app" v-cloak>
+    <demo class="demo-theme-prettyprint" title="Prettyprint" v-bind:languages="{{ languages|json_encode|escape }}">
+        {% for language in languages %}
+            <div slot="content-{{ language.code }}">
+                {% for code in codes %}
+                    <section class="demo-content">
+                        <h3 class="demo-h2">{{ code.title }}</h3>
+                        <pre><code class="prettyprint lang-{{ code.lang }}">{{ code.content|escape }}</code></pre>
+                    </section>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </demo>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

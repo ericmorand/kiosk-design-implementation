@@ -1,0 +1,21 @@
+<nightlycommit-article inline-template>
+    <article>
+        <parallax v-bind:speed="parallax.speed" src="{{ image.source }}" class="image-wrapper">
+        </parallax>
+        <div class="content-wrapper">
+            <div class="header">
+                <h1>{{ title }}</h1>
+                {% if (date) %}
+                    <div class="caption author">{{ author }}</div>
+                    <div class="caption date">{{ date }}</div>
+                {% endif %}
+            </div>
+            {% for section in sections %}
+                <section>
+                    <h2>{{ section.title }}</h2>
+                    <div>{{ section.content }}</div>
+                </section>
+            {% endfor %}
+        </div>
+    </article>
+</nightlycommit-article>
